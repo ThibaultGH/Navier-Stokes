@@ -1,0 +1,9 @@
+mesh Th= readmesh("disk_mesh.msh");
+fespace Vh(Th,P2);
+Vh u1,u2,v1,v2;
+
+problem laplacien(u1,u2,v1,v2) = int2d(Th)( dx(u1)*dx(v1)+dy(u2)*dy(v2) ) + on(0,1,u1=1,u2=1);
+
+laplacien;
+
+plot([u1,u2],value=true,wait=true);

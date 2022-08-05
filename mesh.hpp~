@@ -1,0 +1,42 @@
+#ifndef MESH_HPP
+#define MESH_HPP
+
+#include <Eigen/Dense>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+typedef Eigen::VectorXd VEigen;
+typedef vector<int> veci;
+
+class mesh{
+
+private :
+
+  int m_nbv;
+
+  int m_nbt;
+
+  int m_nbe;
+
+  int m_nbeb;
+
+  VEigen* m_Nodes;
+
+  veci* m_Element;
+
+  veci* m_Boundary;
+  
+  char* m_filename;
+
+public :
+
+  mesh(char* filename);
+
+
+
+
+};
+
+#endif

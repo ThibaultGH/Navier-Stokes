@@ -1,0 +1,63 @@
+#ifndef FUNCTION_HPP
+#define FUNCTION_HPP
+
+#include <Eigen/Sparse>
+
+#include "mesh.hpp"
+
+using namespace std;
+using namespace Eigen;
+
+typedef Vector2d R2;
+typedef Matrix<double,2,2> R22;
+typedef VectorXi Tri;
+typedef Vector4i Edge;
+
+typedef Triplet<double> T;
+typedef SparseMatrix<double> SpMat;
+typedef VectorXd Vec;
+typedef Matrix<double,6,6> R66;
+typedef Matrix<double,6,3> R63;
+typedef Matrix<double,3,3> R33;
+
+double g(R2 pnt);
+
+double psi(const R2& pnt, int i);
+
+R2 Gradpsi(int i);
+
+double phi(const R2& pnt, int i);
+
+R2 Gradphi(const R2& pnt, int i);
+
+R2 F_T(const R2* T, const R2& u);
+
+R2 invF_T(const R2* T, const R2& u);
+
+R66 MassEle(const R2* T);
+
+SpMat Mass(int Nt, int Nv, int Ne, map<int, Tri> Element, map<int, R2> Nodes);
+
+R66 RigEle(const R2* T);
+
+SpMat Rig(int Nt, int Nv, int Ne, map<int, Tri> Element, map<int, R2> Nodes);
+
+R63 DivEle(const R2* T, int l);
+
+SpMat Div(int Nt, int Nv, int Ne, map<int, Tri> Element, map<int, R2> Nodes, int l);
+
+R33 PenEle(const R2* T);
+
+SpMat Pen(int Nt, int Nv, int Ne, map<int, Tri> Element, map<int, R2> Nodes, int l);
+
+SpMat AssemSys(mesh& Th, double nu, double alp, double eps, double tgv, Vec& v);
+
+Vec AssemSnd(const mesh& Th, const Vec& u, double dt);
+
+void SndBorderCond(mesh& Th, Vec& v, double tgv);
+
+void SavetoPlot(const mesh Th, const Vec& x, const char* filename);
+
+int StructMatGlob(const SpMat& M, bool coef);
+
+#endif

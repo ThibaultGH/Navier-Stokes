@@ -1,0 +1,17 @@
+mesh Th= readmesh("carre.msh");
+fespace Vh(Th,P2), Qh(Th,P1);
+Vh u1,u2,v1,v2, uold=0,vold=0;
+Qh p,q;
+real nu=0.01, T=1., dt = 0.1, eps = 1e-6;
+int m, M= T/dt;
+problem stokes(u1, u2, p, v1, v2, q)=
+int2d(Th)( nu*(dx(u1)*dx(v1) + dy(u1)*dy(v1) + dx(u2)*dx(v2) + dy(u2)*dy(v2))- p*dx(v1) - p*dy(v2) - dx(u1)*q - dy(u2)*q - eps*p*q) + int2d(Th)(on(3,u1=1,u2=0) + on(1,2,4,u1=0,u2=0));
+
+for(m=0;m<M;m++){
+stokes; uold=u1; vold=u2;
+plot([u1,u2],value=true, wait=true, cmm="t="+m*dt);
+plot(p,fill=1,value=true, wait=true, cmm="t="+m*dt);
+
+}
+
+//  + 1/dt*(u1*v1 + u2*v2)

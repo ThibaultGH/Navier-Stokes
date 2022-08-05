@@ -1,0 +1,103 @@
+#include <iostream>
+#include <time.h>
+#include <iomanip>
+#include <math.h>
+#include <map>
+#include <Eigen/Sparse>
+#include <Eigen/UmfPackSupport>
+#include <string>
+#include "function.hpp"
+#include "mesh.hpp"
+
+using namespace std;
+using namespace Eigen;
+
+typedef Vector2d R2;
+typedef Matrix<double,2,2> R22;
+typedef VectorXi Tri;
+typedef Vector4i Edge;
+
+typedef Triplet<double> T;
+typedef SparseMatrix<double> SpMat;
+typedef VectorXd Vec;
+typedef Matrix<double,6,6> R66;
+typedef Matrix<double,6,3> R63;
+typedef Matrix<double,3,3> R33;
+
+int main(){
+
+  // LECTURE DU MAILLAGE
+
+  char filename[] = "marche.msh";
+
+  mesh Th(filename);
+
+  int nv = Th.Nv();
+  int ne = Th.Ne();
+
+  // FIN LECTURE DU MAILLAGE
+
+  // INITIALISATION DES PARAMETRES
+
+  int N = 10;
+  double nu = 0.01;
+  double T = 1;
+  double dt = T/N;
+  double alp = 1/dt;
+  double eps = pow(10,-6);
+  double tgv = pow(10,30);
+
+  // FIN INITIALISATION DES PARAMETRES
+
+  // CONSTRUCTION DU SYSTEME LINEAIRE ET RESOLUTION DU PROBLEME DE NAVIER-STOKES
+  
+  Vec v;
+  SpMat M = AssemSys(Th,nu,alp,eps,tgv,v);
+    
+  Vec u;
+  UmfPackLU<SpMat> solver;
+  solver.compute(M);
+  u = solver.solve(v);
+
+  int m = 0;
+
+  stringstream flux;
+  flux << "plot" << m << ".txt";
+  string str = flux.str();
+  char name[11];
+  for(int i = 0; i < 9; ++i){name[i] = str[i];}
+  
+  SavetoPlot(Th,u,name);
+
+  // while(m*dt < T){
+
+  //   time_t begin;
+  //   time(&begin);
+
+  //   v = AssemSnd(Th, u, dt);
+
+  //   time_t end;
+  //   time(&end);
+
+  //   double secs;
+  //   secs = difftime(end,begin);
+
+  //   cout << secs << endl;
+    
+  //   SndBorderCond(Th,v,tgv);
+
+  //   u = solver.solve(v);
+  //   m += 1;
+    
+  //   stringstream flux;
+  //   flux << "plot" << m << ".txt";
+  //   string str = flux.str();
+  //   for(int i = 0; i < 9; ++i){name[i] = str[i];}
+    
+  //   SavetoPlot(Th,u,name);
+
+  // }
+
+  // FIN CONSTRUCTION DU SYSTEME LINEAIRE ET RESOLUTION DU PROBLEME DE NAVIER-STOKES  
+
+}

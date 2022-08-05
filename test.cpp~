@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <Eigen/UmfPackSupport>
+#include <Eigen/Sparse>
+#include <Eigen/Dense>
+#include <math.h>
+#include <map>
+
+#include "function.hpp"
+
+using namespace std;
+using namespace Eigen;
+
+typedef Eigen::Triplet<double> T;
+typedef Eigen::SparseMatrix<double> SpMat;
+typedef Eigen::Matrix<double,6,6> RigMat;
+typedef Eigen::Matrix<double,6,3> DivMat;
+typedef Eigen::Matrix<double,3,3> PenMat;
+typedef Eigen::VectorXd VEigen;
+
+typedef vector<double> vecd;
+typedef vector<int> veci;
+
+int main(){
+
+
+
+
+
+
+}

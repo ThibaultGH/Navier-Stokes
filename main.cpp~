@@ -1,0 +1,249 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <Eigen/UmfPackSupport>
+#include <Eigen/Sparse>
+#include <Eigen/Dense>
+#include <math.h>
+#include <map>
+
+#include "function.hpp"
+
+using namespace std;
+using namespace Eigen;
+
+typedef Triplet<double> T;
+typedef SparseMatrix<double> SpMat;
+typedef Matrix<double,6,6> RigMat;
+typedef Matrix<double,6,3> DivMat;
+typedef Matrix<double,3,3> PenMat;
+typedef VectorXd VEigen;
+
+typedef vector<double> vecd;
+typedef vector<int> veci;
+
+int main(){
+
+  // map<pair<int, int>, double> test;
+  // pair<int, int> my_pair;
+  // my_pair.first = 1;
+  // my_pair.second = 1;
+ 
+  // test[my_pair] = 2.3;
+
+  // cout << test[my_pair] << endl;
+
+  
+
+
+
+
+  
+  
+  VEigen trianref[6];
+  for(int i = 0; i < 6; ++i){
+    trianref[i].resize(2);
+  }
+  
+  trianref[2][0] = 0; trianref[2][1] = 0;
+  trianref[0][0] = 1; trianref[0][1] = 0;
+  trianref[1][0] = 0; trianref[1][1] = 1;
+  //trianref[3][0] = 0.5;trianref[3][1] = 0;
+  //trianref[4][0] = 0.5;trianref[4][1] = 0.5;
+  //trianref[5][0] = 0;trianref[5][1] = 0.5;
+  
+  //cout << Gradphi(trianref[2],2) << endl;
+  
+  RigMat Mref = RigEle(trianref);
+  VEigen ones(Mref.rows());
+  for(int i = 0; i < ones.size(); ++i){ones[i] = 1;}
+  
+  // double t = 0.2;
+  // cout << lambda(trianref[2]*t,0) << endl;
+  
+  VEigen trian[6];
+  for(int i = 0; i < 6; ++i){
+    trian[i].resize(2);
+  }
+  
+  trian[0][0] = 3; trian[0][1] = 1;
+  trian[1][0] = 2; trian[1][1] = 0;
+  trian[2][0] = 3; trian[2][1] = 0;
+  
+  // RigMat M = RigEle(trian);
+  // VEigen ones(M.rows());
+  // for(int i = 0; i < ones.size(); ++i){ones[i] = 1;}
+
+  //cout << M << endl;
+  //cout << (ones.adjoint())*M*ones << endl;
+  
+  int nbv, nbt, nbe, nbeb;
+  char filename[] = "carre.msh";
+
+  Dim(nbv, nbt, nbe, nbeb, filename);
+  
+  int N_P1 = nbv;
+  int N_P2 = nbv+nbe;
+
+  VEigen Nodes[N_P1];
+  veci Element[nbt], Boundary[nbeb], edge[nbe];
+
+  Load(Nodes, Element, Boundary, filename);
+
+  //veci trian[nbv];
+  //Trian(nbv,nbt,Element,trian);
+  
+  /*
+  for(int i = 0; i < nbv; ++i){
+    int k = trian[i][0];
+    for(int j = 1; j < k+1; ++j){
+      cout << trian[i][j] << "\t";
+    }
+    cout << endl;
+  }
+  */
+
+  // VEigen jh(2);
+  // jh[0] = 0.3; jh[1] = 0.1;
+  // int n_t = 0;
+  // int res;
+  // res = WhereWasI(jh,n_t,Element,trian);
+  // cout << res << endl;
+
+  veci numedge[nbt];
+  Edge(nbv, nbt, nbe, Element, edge, numedge);
+
+  // for(int i = 0; i < nbt; ++i){
+  //   for(int j = 0; j < 3; ++j){
+  //     cout << numedge[i][j] << " ";
+  //   }
+  //   cout << endl;
+  // }
+  
+  veci idnodesbound = IdNodesBound(nbv,nbe,nbeb,edge,Boundary);
+
+  //for(int i = 0; i < 2*nbeb; ++i){cout << idnodesbound[i] << endl;} 
+
+  VEigen midpnt[N_P2];
+  ndofP2(nbv,nbe,Nodes,edge,midpnt);
+
+  veci lbl0(3);
+  lbl0 = IdNodesLbl(idnodesbound, midpnt, 0);
+
+  //for(int i = 0; i < lbl0.size(); ++i){cout << lbl0[i] << endl;}
+ 
+  veci ddl[nbt];
+  dofP2(nbt,nbv,Element,numedge,ddl);
+
+  // for(int i = 0; i < nbt; ++i){
+  //   for(int j  = 0; j < 6; ++j){
+  //     cout << ddl[i][j] << " ";
+  //   }
+  //   cout << endl;
+  // }
+  
+  // for(int i = 0; i < N_P2; ++i){
+  //   cout << midpnt[i] << endl << endl;
+  // }
+  
+  // ofstream f("ddlparele.dat");
+
+  // for(int t = 0; t < nbt; ++t){
+  //   veci tri(6);
+  //   tri = ddl[t];
+  //   for(int i = 0; i < 6; ++i){
+  //     f << tri[i] << " ";
+  //   }
+  //   for(int i = 0; i < 6; ++i){
+  //     f << tri[i] + N_P2 << " ";
+  //   }
+  //   for(int i = 0; i < 3; ++i){
+  //     f << tri[i] + 2*N_P2 << " ";
+  //   }
+  //   f << endl;
+  // }
+
+    
+  double nu = 1;
+  double eps = pow(10,-6);
+  double T = 1;
+  int N = 10;
+  double dt = T/N;
+  double alp = 1./dt;
+  SpMat matglob(2*N_P2+N_P1,2*N_P2+N_P1);
+  VEigen righthandside(2*N_P2+N_P1);
+  for(int i = 0; i < 2*N_P2+N_P1; ++i){righthandside[i] = 0;}
+  //cout << righthandside << endl; 
+  matglob = AssemSys(midpnt,ddl,Element,idnodesbound,lbl0,nbv,nbt,nbe,eps,nu,alp,righthandside);
+
+  // //cout << matglob << endl;
+  
+  /*
+  veci tri = ddl[0];
+  for(int i = 0; i < 6; ++i){
+    for(int j = 0; j < 6; ++j){
+      cout << matglob.coeff(tri[i],tri[j]) << " ";
+    }
+    cout << endl;
+  }
+  */
+  
+  /*
+  for(int i = 0; i < 2*N_P2+N_P1; ++i){
+    for(int j = 0; j < 2*N_P2+N_P1; ++j){
+      if( abs(matglob.coeff(i,j)) < pow(10,6) ){
+	nbr += matglob.coeff(i,j);
+	//cout << matglob.coeff(i,j) << "\t";
+      }
+    }
+    //cout << endl;
+    //cout << nbr << endl;
+    //nbr = 0;
+  }  
+  */
+  
+    
+  //cout << nbr << endl;
+
+  //for(int i = 0; i < 2*N_P2+N_P1; ++i){cout << matglob.coeff(i,i) << endl;}
+
+  //cout << righthandside << endl; 
+  
+  //for(int i = 0; i < 3; ++i){cout << righthandside[lbl0[i]] << endl;}
+
+  //cout << IsSymetric(matglob) << endl;
+
+  //cout << righthandside << endl;
+  
+  //int k = StructMatGlob(matglob,1);
+
+  VEigen u(2*N_P2+N_P1);
+  UmfPackLU<SpMat> solver;
+  solver.compute(matglob);
+  u = solver.solve(righthandside);
+  cout << u << endl;
+  //cout << x[2] << endl;cout << x[3] << endl;cout << x[10] << endl;
+  double norm = 0;
+  for(int i = 0; i < 26; ++i){norm+=abs(u[i]);}
+  cout << norm << endl;
+  cout << matglob*u-righthandside << endl;
+  
+  SavetoPlot(nbe,nbv,nbt,ddl,u,"plot.txt");
+}
+
+
+
+/*
+
+
+  VEigen trianref[6];
+  for(int i = 0; i < 6; ++i){
+    trianref[i].resize(2);
+  }
+  trianref[0][0] = 0;trianref[0][1] = 0;
+  trianref[1][0] = 1;trianref[1][1] = 0;
+  trianref[2][0] = 0;trianref[2][1] = 1;
+  trianref[3][0] = 1./2;trianref[3][1] = 0;
+  trianref[4][0] = 1./2;trianref[4][1] = 1./2;
+  trianref[5][0] = 0;trianref[5][1] = 1./2;
+*/

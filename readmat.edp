@@ -1,0 +1,90 @@
+mesh Th=readmesh("trian_ref.msh");
+fespace Vh(Th,[P2,P2,P1]);
+
+macro grad(u) [dx(u),dy(u)]//
+macro div(u1,u2) (dx(u1)+dy(u2))// 
+
+
+real nu = 1; 
+real epsp= 1e-6;
+varf va([u1,u2,p],[v1,v2,q]) = 
+int2d(Th) ( nu* (grad(u1)'*grad(v1)+grad(u2)'*grad(v2))
+//- div(u1,u2)*q - div(v1,v2)*p 
+- epsp*p*q )
++ on(1,2,3,4,u1=0,u2=0); 
+
+int n,nnz;
+n = Vh.ndof; 
+int[int] I(n), I1(n);
+matrix A,AFF,A1 ;
+AFF= va(Vh,Vh,tgv=1e10);
+
+{
+	ifstream f("ddlparele.dat");
+	for(int k=0; k< Th.nt; ++k)
+	 for(int i=0; i<15;++i)
+	 { int jff = Vh(k,i);
+	   int jc;
+       f >> jc; 
+	   I[jc]=jff; //    c++ -> FF
+	   I1[jff] = jc;
+     }
+}	
+A1 = AFF(I,I);
+cout << I << endl;
+cout << A1 << endl;
+/*
+{
+	ifstream f("matrice.dat");
+	f >> nnz;
+	cout << " nnz =" << nnz << endl;
+int [int] I(nnz*2+1),J(nnz*2+1);
+	real[int] C(nnz*2);
+	int k=0;
+	for(int i=0; i< nnz;++i)
+	{
+	f >> I[k] >> J[k] >> C[k];
+	k++;
+	if( I[i] < J[i]  &&0)
+	{
+		I[k]=J[k-1];
+		J[k]=I[k-1];
+		C[k] =C[k-1];
+		k++;	
+	}
+	//assert(I[i]>= J[i]); 
+	}
+	n = max(I.max,J.max);	
+	cout << " n = " << n << endl; 
+	I[k] =n;
+	J[k]= n;
+	C[k]=0; 
+	k++; 
+	I.resize(k);
+	J.resize(k);
+	C.resize(k); 
+	A=[I,J,C]; 
+    n++;
+}
+cout << nnz << " " << n << endl; 
+A1 = -A+A1;
+cout << A1 << endl; 
+real [int] b(n),u(n),v(n);
+{
+	ifstream bf("second_membre.dat");
+	ifstream uf("solcpp.dat");
+	for(int i=0; i<n;++i)
+	{
+	bf>> b[i];
+	uf>> u[i];
+    }
+	
+
+}
+
+set(A,solver=UMFPACK);
+v= A^-1*b;
+
+v-=u;
+cout << " err = " << v.linfty << endl;
+*/

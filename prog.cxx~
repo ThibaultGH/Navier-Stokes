@@ -1,0 +1,130 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <Eigen/Sparse>
+#include <math.h>
+
+#include "function.hpp"
+
+using namespace std;
+
+typedef Eigen::Triplet<double> T;
+typedef Eigen::SparseMatrix<double> SpMat;
+typedef Eigen::Matrix<double,3,3> EleMat;
+typedef Eigen::VectorXd VEigen;
+
+typedef vector<double> vecd;
+typedef vector<int> veci;
+
+int main(){
+
+  
+  /*
+  vecd test1(2);
+  test1[0] = 0;
+  test1[1] = 0;
+  vecd test2(2);
+  test2[0] = 1;
+  test2[1] = 0;
+
+  vecd midpnt = MidPoint(test1, test2);
+
+  //for(int i = 0; i < 2; ++i){cout << midpnt[i] << endl;}
+  
+  char filename[] = "disk_mesh.msh";
+  double Pi = 4*atan(1);
+  double k = Pi;
+
+  VEigen NumSol;
+  VEigen ExaSol;
+
+  
+  
+  NumSol = SolverP1L(filename,k,0);
+  ExaSol = SolExa(filename,k,0);
+
+  cout << NumSol << endl;
+  //cout << ExaSol << endl;
+  //cout << ExaSol - NumSol << endl;
+
+
+  */
+
+
+
+  /*
+  char filename[] = "disk_mesh.msh";
+
+  double k = 4*atan(1);
+  
+  int NumNodes; int NumElement; int NumBoundary;
+
+  Dim(NumNodes, NumElement, NumBoundary, filename);
+  
+  
+  //cout << NumNodes << endl << NumElement << endl << NumBoundary << endl;
+  
+  vecd Nodes[NumNodes];
+  veci Element[NumElement];
+  veci Boundary[NumBoundary];
+
+  
+  Load(Nodes, Element, Boundary, filename);
+
+  bool b = 0;
+  VEigen test(NumNodes);
+
+  VEigen RS;
+
+  RS = RightSide(Nodes, Boundary, NumNodes, NumBoundary, filename, k, b, test);
+
+  VEigen test2(NumNodes);
+  for(int i = 0; i < NumNodes; ++i){test2(i) = 1;}
+  
+  cout << RS.dot(test2) << endl;
+
+  cout << 2*k << endl;
+  */
+
+
+
+  /*
+  
+  vecd Nodes1[3];
+  veci Element1[1];
+  Element1[0].resize(3);
+  Element1[0][0] = 0;
+  Element1[0][1] = 1;
+  Element1[0][2] = 2;
+  
+  for(int i = 0; i < 3; ++i){
+    Nodes1[i].resize(2);}
+  
+  Nodes1[0][0] = 0;
+  Nodes1[0][1] = 1;
+  Nodes1[1][0] = 1;
+  Nodes1[1][1] = 0;
+  Nodes1[2][0] = 1;
+  Nodes1[2][1] = 1;
+
+  EleMat K = RigEle(Nodes1);
+  EleMat M = MassEle(Nodes1);
+
+  cout << K << endl;
+
+  SpMat Ma = Mass(Nodes1,Element1,3,1);
+  SpMat Ri = Rig(Nodes1,Element1,3,1);
+  VEigen U(3);
+  U(0) = 1;
+  U(1) = 1;
+  U(2) = 1;
+
+  //cout << U.dot(Ma*U) << endl;
+  //for(int i = 0; i < 3; ++i){
+  //cout << (Ri*U)[i] << endl;}
+  //cout << Ma << endl;
+  */
+
+
+}
+

@@ -1,0 +1,4 @@
+<map id="Eigen::PermutationWrapper&lt; _IndicesType &gt;" name="Eigen::PermutationWrapper&lt; _IndicesType &gt;">
+<area shape="rect" id="node2" href="$classEigen_1_1PermutationBase.html" title="{Eigen::PermutationBase\l\&lt; PermutationWrapper\&lt;\l _IndicesType \&gt; \&gt;\n||+ applyTranspositionOnTheLeft()\l+ applyTranspositionOnTheRight()\l+ cols()\l+ determinant()\l+ indices()\l+ indices()\l+ inverse()\l+ operator*()\l+ operator*()\l+ operator=()\land 8 more...\l}" alt="" coords="5,307,227,560"/>
+<area shape="rect" id="node3" href="$structEigen_1_1EigenBase.html" title="{Eigen::EigenBase\&lt; Permutation\lWrapper\&lt; _IndicesType \&gt; \&gt;\n||+ addTo()\l+ applyThisOnTheLeft()\l+ applyThisOnTheRight()\l+ cols()\l+ const_cast_derived()\l+ const_derived()\l+ derived()\l+ derived()\l+ evalTo()\l+ rows()\l+ size()\l+ subTo()\l}" alt="" coords="12,5,220,259"/>
+</map>

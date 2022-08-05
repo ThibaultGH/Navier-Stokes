@@ -1,0 +1,57 @@
+#include <iostream>
+
+#include "mesh.hpp"
+
+using namespace std;
+
+mesh::mesh(char* filename)
+{
+  m_filename = filename;
+  
+  ifstream myflux(m_filename, ios::in);
+  
+  if(myflux){
+
+    string word;
+    
+    myflux >> word;
+    m_nbv = atoi(word.c_str());
+    myflux >> word;
+    m_nbt = atoi(word.c_str());
+    myflux >> word;
+    m_nbeb = atoi(word.c_str());
+
+    m_nbe = (3*m_nbt-m_nbeb)/2;
+    
+    for(int i = 0; i < m_nbv; ++i){
+      m_Nodes[i].resize(2);
+      myflux >> word;
+      m_Nodes[i][0] = atof(word.c_str());
+      myflux >> word;
+      m_Nodes[i][1] = atof(word.c_str());
+      myflux >> word;
+    }
+    
+    for(int i = 0; i < m_nbt; ++i){
+      m_Element[i].resize(3);
+      myflux >> word;
+      m_Element[i][0] = atoi(word.c_str())-1;
+      myflux >> word;
+      m_Element[i][1] = atoi(word.c_str())-1;
+      myflux >> word;
+      m_Element[i][2] = atoi(word.c_str())-1;
+      myflux >> word;
+    }
+
+    for(int i = 0; i < m_nbeb; ++i){
+      m_Boundary[i].resize(3);
+      myflux >> word;
+      m_Boundary[i][0] = atoi(word.c_str())-1;
+      myflux >> word;
+      m_Boundary[i][1] = atoi(word.c_str())-1;
+      myflux >> word;
+      m_Boundary[i][2] = atoi(word.c_str());
+    }
+  }
+}
+

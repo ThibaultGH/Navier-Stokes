@@ -1,0 +1,7 @@
+border C(t=0,2*pi) {x=cos(t); y=sin(t);}
+
+mesh Th = buildmesh(C(10));
+
+plot(Th);
+
+savemesh(Th, "disk_mesh.msh");

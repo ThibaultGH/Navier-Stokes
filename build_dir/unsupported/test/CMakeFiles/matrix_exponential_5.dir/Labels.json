@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/source_dir/unsupported/test/matrix_exponential.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildUnsupported"
+		],
+		"name" : "matrix_exponential_5"
+	}
+}

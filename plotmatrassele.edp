@@ -1,0 +1,35 @@
+// mesh Th=square(10,10);
+mesh Th = readmesh("trian_ref.msh");
+plot(Th);
+
+fespace Vh(Th,[P2,P2,P1]);
+
+// macro grad(u) [dx(u),dy(u)]
+// macro div(u1,u2) (dx(u1)+dy(u2))
+
+
+real nu = 1; 
+real epsp= 1e-6;
+varf va([u1,u2,p],[v1,v2,q]) = 
+int2d(Th) ( nu*(dx(u1)*dx(v1) + dy(u1)*dy(v1) + dx(u2)*dx(v2) + dy(u2)*dy(v2)) -p*dx(v1) - p*dy(v2) -epsp*p*q )+ on(1,2,4,u1=0,u2=0) + on(3,u1=1,u2=0);
+
+matrix A=va(Vh,Vh);
+
+int  k = 0;
+Vh [u1,u2,p]= [x,10+x, 100+x ];
+// for(int il=0;il<15; ++il)
+// {
+// 	  int i = Vh(k,il);
+// 	 cout << u1[][i] << " ";
+// }
+// cout << "\n\n"; 
+for(int il=0;il<15; ++il)
+{
+for(int jl=0;jl<15; ++jl)
+{
+	 int i = Vh(k,il);
+	 int j = Vh(k,jl); 
+	 cout << A(i,j) << " ";
+}
+cout << "\n";
+}

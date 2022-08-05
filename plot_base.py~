@@ -1,0 +1,29 @@
+def read(filename):
+
+    
+    source = open(filename, 'r')
+
+    line = source.readlines()
+
+    for i,b in enumerate(line):
+        line[i] = b.replace("\n","")
+
+    NbNodes = int(line[1])
+    #print(NbNodes)
+    NbEle = int(line[NbNodes+6])
+    #print(NbEle)
+    
+    tab_nodes = np.zeros((NbNodes,3))
+    tab_ele = np.zeros((NbEle,3))
+
+    for i in range(4,NbNodes+4):
+        caractere = line[i].split("\t")
+        for k in range(3):
+            tab_nodes[i-4,k] = float(caractere[k])
+
+    for j in range(NbNodes+9,NbEle+NbNodes+9):
+        caractere = line[j].split("\t")
+        for k in range(3):
+            tab_ele[j-NbNodes-9,k] = int(caractere[k])
+
+    return [tab_nodes,tab_ele]

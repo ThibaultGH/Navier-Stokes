@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Le probl\350me de Stokes}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Le cadre th\351orique}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Formulation variationnelle et syst\350me lin\351aire}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Impl\351mentation}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Assemblage du syst\350me lin\351aire}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Gestion des conditions aux bords}{subsection.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.4}{R\351sultats num\351riques}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Le probl\350me de Navier-Stokes}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Le cadre th\351orique}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{De Navier-Stokes \340 Stokes par la m\351thode des caract\351ristiques r\351trograde}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Mentions sp\351ciales sur l'impl\351mentation}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{Les noeuds P2}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{L'importance du calcul diff\351rentiel}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{La sortie de maillage}{section.3}% 14
+\BOOKMARK [1][-]{section.4}{Application de la m\351thode sur la marche}{}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Description du domaine et de son bord}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Le cas qui fonctionne assez bien}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Le cas qui fonctionne moins bien}{section.4}% 18

@@ -1,0 +1,174 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d4ab2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d4ab2.dir/build.make CMakeFiles/cmTC_d4ab2.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d4ab2.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -DCOMPILER_SUPPORT_Wshorten64to32 -Werror   -Wshorten-64-to-32 -o CMakeFiles/cmTC_d4ab2.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles/cmTC_d4ab2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d4ab2.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_d4ab2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d4ab2/fast' failed
+make: *** [cmTC_d4ab2/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wenumconversion failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ca199/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ca199.dir/build.make CMakeFiles/cmTC_ca199.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ca199.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -DCOMPILER_SUPPORT_Wenumconversion -Werror   -Wenum-conversion -o CMakeFiles/cmTC_ca199.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-Wenum-conversion'
+CMakeFiles/cmTC_ca199.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ca199.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_ca199.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ca199/fast' failed
+make: *** [cmTC_ca199/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2ba20/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2ba20.dir/build.make CMakeFiles/cmTC_2ba20.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2ba20.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -DCOMPILER_SUPPORT_Wcpp11extensions -Werror   -Wc++11-extensions -o CMakeFiles/cmTC_2ba20.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-Wc++11-extensions'
+CMakeFiles/cmTC_2ba20.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2ba20.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_2ba20.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2ba20/fast' failed
+make: *** [cmTC_2ba20/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0e6c5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0e6c5.dir/build.make CMakeFiles/cmTC_0e6c5.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0e6c5.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd981 -Werror   -wd981 -o CMakeFiles/cmTC_0e6c5.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-wd981'
+CMakeFiles/cmTC_0e6c5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0e6c5.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_0e6c5.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0e6c5/fast' failed
+make: *** [cmTC_0e6c5/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99376/fast"
+/usr/bin/make -f CMakeFiles/cmTC_99376.dir/build.make CMakeFiles/cmTC_99376.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_99376.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd2304 -Werror   -wd2304 -o CMakeFiles/cmTC_99376.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-wd2304'
+CMakeFiles/cmTC_99376.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99376.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_99376.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99376/fast' failed
+make: *** [cmTC_99376/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_STRICTANSI failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_af282/fast"
+/usr/bin/make -f CMakeFiles/cmTC_af282.dir/build.make CMakeFiles/cmTC_af282.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_af282.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_STRICTANSI -Werror   -strict-ansi -o CMakeFiles/cmTC_af282.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-strict-ansi'
+CMakeFiles/cmTC_af282.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_af282.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_af282.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_af282/fast' failed
+make: *** [cmTC_af282/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_490cd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_490cd.dir/build.make CMakeFiles/cmTC_490cd.dir/build
+make[1]: Entering directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_490cd.dir/src.cxx.o
+/usr/bin/c++     -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_Qunusedarguments -Werror   -Qunused-arguments -o CMakeFiles/cmTC_490cd.dir/src.cxx.o -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: unrecognized command line option '-Qunused-arguments'
+CMakeFiles/cmTC_490cd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_490cd.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_490cd.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_490cd/fast' failed
+make: *** [cmTC_490cd/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cf4a8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cf4a8.dir/build.make CMakeFiles/cmTC_cf4a8.dir/build
+make[1] : on entre dans le répertoire « /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_cf4a8.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_cf4a8.dir/CheckSymbolExists.c.o   -c "/home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
+Linking C executable cmTC_cf4a8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf4a8.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_cf4a8.dir/CheckSymbolExists.c.o  -o cmTC_cf4a8 -rdynamic 
+CMakeFiles/cmTC_cf4a8.dir/CheckSymbolExists.c.o : Dans la fonction « main » :
+CheckSymbolExists.c:(.text+0x16) : référence indéfinie vers « pthread_create »
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cf4a8.dir/build.make:97 : la recette pour la cible « cmTC_cf4a8 » a échouée
+make[1]: *** [cmTC_cf4a8] Erreur 1
+make[1] : on quitte le répertoire « /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp »
+Makefile:126 : la recette pour la cible « cmTC_cf4a8/fast » a échouée
+make: *** [cmTC_cf4a8/fast] Erreur 2
+
+File /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9b9a0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9b9a0.dir/build.make CMakeFiles/cmTC_9b9a0.dir/build
+make[1] : on entre dans le répertoire « /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_9b9a0.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9b9a0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9b9a0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b9a0.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_9b9a0.dir/CheckFunctionExists.c.o  -o cmTC_9b9a0 -rdynamic -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9b9a0.dir/build.make:97 : la recette pour la cible « cmTC_9b9a0 » a échouée
+make[1]: *** [cmTC_9b9a0] Erreur 1
+make[1] : on quitte le répertoire « /home/thibault/Dropbox/M2 - Mathématiques/Cours Fondamentaux/Resolution EDP par EF/TP4/build_dir/CMakeFiles/CMakeTmp »
+Makefile:126 : la recette pour la cible « cmTC_9b9a0/fast » a échouée
+make: *** [cmTC_9b9a0/fast] Erreur 2
+
+

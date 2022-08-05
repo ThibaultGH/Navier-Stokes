@@ -1,0 +1,183 @@
+mesh Th=readmesh("mesh\ class/marche.msh");
+fespace Vh(Th,P2);
+fespace Ph(Th,P1);
+Vh uf1,uf2;
+Ph pf;
+{
+	ifstream f("plot0.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="0",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot1.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="1",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+{
+	ifstream f("plot2.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="2",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+{
+	ifstream f("plot3.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="3",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot4.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="4",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot5.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="5",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot6.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="6",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot7.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="7",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot8.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="8",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+
+{
+	ifstream f("plot9.txt");
+	for(int k=0; k<Th.nt;++k)
+	{ 
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf1[][Vh(k,i)];
+	for(int i=0; i<Vh.ndofK; ++i)
+	f >> uf2[][Vh(k,i)];
+	for(int i=0; i<Ph.ndofK; ++i)
+	f >> pf[][Ph(k,i)];
+	
+}
+}
+
+plot([uf1,uf2],fill=0,cmm="9",wait=1,value=true);
+// plot(pf,fill=1,cmm="pf",wait=1,value=true);
+
+//plot(uf2,fill=0,cmm="uf",wait=1,value=true,boundary=false);

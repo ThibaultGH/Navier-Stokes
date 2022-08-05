@@ -1,0 +1,6 @@
+//mesh Th = square(1,1);
+mesh Th = square(25,25);
+
+plot(Th);
+
+savemesh(Th, "carre.msh");

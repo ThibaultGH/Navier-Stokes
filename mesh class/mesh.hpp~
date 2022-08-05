@@ -1,0 +1,100 @@
+#ifndef MESH_HPP
+#define MESH_HPP
+
+#include <iostream>
+#include <map>
+#include <Eigen/Sparse>
+
+using namespace std;
+using namespace Eigen;
+
+typedef Vector2d R2;
+typedef Matrix<double,2,2> R22;
+typedef VectorXi Tri;
+typedef Vector4i Edge;
+
+typedef Triplet<double> T;
+typedef SparseMatrix<double> SpMat;
+typedef Matrix<double,6,6> R66;
+typedef Matrix<double,6,3> R63;
+typedef Matrix<double,3,3> R33;
+
+class mesh{
+
+private :
+
+  int m_Nv;
+
+  int m_Nt;
+
+  int m_Ne;
+
+  int m_Neb;
+
+  int m_Nlbl;
+
+  map<int, R2> m_Nodes;
+
+  map<int, vector<int> > m_lbl_Nodes;
+
+  map<int, Tri> m_Element;
+
+  map<int, vector<int> > m_lbl_Element;
+  
+  map<int, Edge> m_Boundary;
+  
+  map<int, vector<int> > m_lbl_Boundary;
+
+  map<int, Edge> m_Edge;
+
+  map<int, vector<Edge> > m_Lbl_Edge;
+
+  map<int, int> m_Lbl_Size;
+
+  map<int, vector<int> > m_Neighbors;
+
+  map<int, int> m_NbofNeighbors;
+  
+  char* m_filename;
+
+public :
+
+  mesh(char* filename);
+
+  int Nv() const ;
+
+  int Nt() const ;
+
+  int Ne() const ;
+
+  int Neb() const ;
+
+  int Nlbl() const;
+
+  map<int, Edge> GetEdge();
+
+  map<int, int> Lbl_Size() const;
+  
+  map<int, R2> Nodes() const;
+
+  map<int, vector<int> > Lbl_Nodes() const;
+
+  map<int, Tri> Element() const;
+  
+  map<int, vector<int> > Lbl_Element() const;
+
+  map<int, Edge> Boundary() const;
+  
+  map<int, vector<int> > Lbl_Boundary() const;
+
+  map<int, Edge> Edg();
+
+  map<int, vector<Edge> > Lbl_Edge();
+
+  map<int, vector<int> > Neighbors() const;
+
+  map<int, int> NbofNeighbors() const;
+
+};
+
+#endif

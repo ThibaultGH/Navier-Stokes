@@ -1,0 +1,13 @@
+//maillage
+
+border a(t=1,0){x=0;y=0.5+0.5*t;label=1;};
+border b(t=0,1){x=5*t;y=0.5;label=2;};
+// border b1(t=0,1){x=4.5*t;y=0.5;label=2;};
+// border b2(t=0,1){x=4.5+t*0.5;y=0.5;label=2;};
+border c(t=1,0){x=5 ;y=0.5*t;label=2;};
+border d(t=0,1){x=5+15*t;y=0;label=2;};
+border e(t=0,1){x=20 ;y=t;label=3;};
+border f(t=1,0){x=20*t;y=1;label=2;};
+mesh Th = buildmesh( a(10*2) + b(20*2) + c(10*2) + d(30*2) + e(20*2) + f(50*2)); // b1(50) + b2(30)
+plot(Th,wait=1,ps="marche.ps");
+savemesh(Th,"marche.msh");

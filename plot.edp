@@ -1,0 +1,30 @@
+
+mesh Th = readmesh("carre.msh");
+
+fespace Xh(Th,P2);		//discretisation pour la vitesse
+fespace Mh(Th,P1);		//discretisation pour la pression
+
+
+plot(Th,wait=1);
+
+Xh ll;
+ifstream ff("freefemU1.sol");
+ff>>ll[];
+
+plot(ll,wait=1,cmm="u1",value=1, ps="sol_cpp(U1).ps");
+
+Xh ll2;
+ifstream ff1("freefemU2.sol"); 
+ff1>>ll2[];
+
+plot(ll2,wait=1,cmm=" u2 ",value=1, ps="sol_cpp2(U2).ps");
+
+
+Mh ll3;
+ifstream ff2("freefemP.sol"); 
+ff2>>ll3[]; 
+
+
+plot(ll3,wait=1,cmm=" p ",value=1, ps="sol_cpp3(P).ps");
+plot([ll,ll2],wait=1,cmm=" [u1,u2] ",value=1, ps="sol_cpp4(u1,u2).ps");
+plot(coef=0.2,cmm=" [u1,u2] et p ",value=1,ll3,[ll,ll2], ps="sol_val.ps");

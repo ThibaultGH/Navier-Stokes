@@ -1,0 +1,26 @@
+CC      = g++
+FLAGS   = -G -Wall
+LDFLAGS =
+LIBRARY =
+INCLUDE =
+
+EXEC = main
+SRCS = main.cpp function.cpp
+OBJS = main.o function.o
+
+
+all : $(EXEC)
+
+$(EXEC) : $(OBJS)
+		$(CC) -g $(LDFLAGS) -o $@ $^
+
+%.o : %.cpp $(HEADERS)
+		$(CC) -g $(CFLAGS) -I/usr/local/include/eigen3 -I/usr/local/include/suitesparse -c -o $@ $<
+
+.PHONY: clean, mrproper
+
+clean :
+		rm -rf *.o
+
+mrproper: clean
+		rm -rf $(EXEC)
